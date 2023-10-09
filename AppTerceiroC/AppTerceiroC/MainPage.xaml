@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTerceiroC.MainPage">
+
+    <StackLayout Padding="50" BackgroundColor="#f7a8e2">
+        <Label Text="Nome"/>
+        <Entry x:Name="txtNome"/>
+        <Button Text="Salvar" x:Name="btnSalvar" Clicked="btnSalvar_Clicked"/>
+    </StackLayout>
+</ContentPage>
