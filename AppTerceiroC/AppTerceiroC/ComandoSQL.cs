@@ -4,8 +4,8 @@ using System.Text;
 
 namespace AppTerceiroC
 {
-    public class ComandoSQL
+    public static class ComandoSQL
     {
-        public static string inserirNome = ""
+        public static string inserirNome = "insert intotbl_clientes(Nome) Values(@nome)";
     }
 }

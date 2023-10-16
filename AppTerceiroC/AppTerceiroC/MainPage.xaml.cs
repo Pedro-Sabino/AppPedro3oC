@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MySqlConnector;
 
 namespace AppTerceiroC
 {
@@ -15,7 +16,7 @@ namespace AppTerceiroC
             InitializeComponent();
         }
 
-        private void btnSalvar_Clicked(object sender, EventArgs e)
+        private async void btnSalvar_Clicked(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(Conexao.strConexao);
             MySqlCommand inserirNome = new MySqlCommand(ComandoSQL.inserirNome);
@@ -23,8 +24,10 @@ namespace AppTerceiroC
             inserirNome.Parameters.AddWithValue("@nome", txtNome.Text);
             conn.Open();
             inserirNome.ExecuteNonQuery();
-            conn.Close;
+            conn.Close();
             txtNome.Text = "";
+
+            await DisplayAlert("Atenção", "Nome salvo com sucesso!", "ok");
         }
     }
 }
